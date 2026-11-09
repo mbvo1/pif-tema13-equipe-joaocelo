@@ -60,3 +60,57 @@ cupomMinimo limite percentual = \preco ->
   if preco > limite
     then criarDesconto percentual preco
     else preco
+
+-- ==== main ====
+
+precoProduto :: Double
+precoProduto = 200.0
+
+blackFriday :: Double -> Double
+blackFriday = criarDesconto 30
+
+cupom10 :: Double -> Double
+cupom10 = subtract 10
+
+cupomAcimaDe150 :: Double -> Double
+cupomAcimaDe150 = cupomMinimo 150 20
+
+main :: IO ()
+main = do
+  putStrLn "=== Motor de promocoes ==="
+  putStrLn "Preco do produto:"
+  print precoProduto
+
+  putStrLn "\n--- Cada promocao sozinha ---"
+  putStrLn "Black Friday (30%):"
+  print (blackFriday precoProduto)
+  putStrLn "Cupom de 10 reais:"
+  print (cupom10 precoProduto)
+  putStrLn "Cupom de 20% para compras acima de 150:"
+  print (cupomAcimaDe150 precoProduto)
+
+  putStrLn "\n--- Aplicando em sequencia: a ordem importa ---"
+  putStrLn "Primeiro Black Friday, depois cupom de 10:"
+  print (aplicarTodas [blackFriday, cupom10] precoProduto)
+  putStrLn "Primeiro cupom de 10, depois Black Friday:"
+  print (aplicarTodas [cupom10, blackFriday] precoProduto)
+
+  putStrLn "\n--- Escolhendo a melhor promocao para o cliente ---"
+  putStrLn "Melhor entre as tres, em 200.0:"
+  print (melhorOpcao [blackFriday, cupom10, cupomAcimaDe150] precoProduto)
+  putStrLn "Sem nenhuma promocao, o preco continua cheio:"
+  print (melhorOpcao [] precoProduto)
+
+  putStrLn "\n--- Extensao: cupom com valor minimo ---"
+  putStrLn "Compra de 100.0 (abaixo do minimo, nao muda):"
+  print (cupomAcimaDe150 100.0)
+  putStrLn "Compra de 150.0 (igual ao minimo, nao muda):"
+  print (cupomAcimaDe150 150.0)
+  putStrLn "Compra de 300.0 (acima do minimo, 20% de desconto):"
+  print (cupomAcimaDe150 300.0)
+
+  putStrLn "\n--- Reaplicando uma promocao ---"
+  putStrLn "Cupom de 10 aplicado duas vezes:"
+  print (aplicarDuasVezes cupom10 precoProduto)
+  putStrLn "Cupom de 10 aplicado cinco vezes:"
+  print (aplicarNVezes 5 cupom10 precoProduto)
