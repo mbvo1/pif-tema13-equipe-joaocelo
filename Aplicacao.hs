@@ -31,6 +31,14 @@ aplicarNVezes n f x
 criarDesconto :: Double -> (Double -> Double)
 criarDesconto p = \preco -> preco * (1 - p / 100)
 
+-- ==== aplicarTodas ====
+
+-- Encadeia as funcoes: o resultado de f vira a entrada das proximas.
+-- Aplicar f ANTES da chamada recursiva garante a ordem esquerda -> direita.
+aplicarTodas :: [a -> a] -> a -> a
+aplicarTodas [] x = x
+aplicarTodas (f:fs) x = aplicarTodas fs (f x)
+
 -- ==== cupomMinimo (extensao) ====
 
 -- Extensao: cupom que so vale para compras ACIMA de um valor minimo.
