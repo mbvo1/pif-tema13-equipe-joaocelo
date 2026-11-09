@@ -35,6 +35,10 @@ Testar no GHCi:
 
     ghci Aplicacao.hs
 
+Se o programa já foi compilado nesta pasta, o GHCi só enxerga o `main`. Nesse caso, carregue o código-fonte dentro do GHCi:
+
+    :l *Aplicacao.hs
+
 Versão em C (com gcc):
 
     gcc -Wall comparacao.c -o comparacao
