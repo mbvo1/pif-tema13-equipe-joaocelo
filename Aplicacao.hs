@@ -30,3 +30,15 @@ aplicarNVezes n f x
 -- preco negativo. Discutimos essa limitacao na analise critica.
 criarDesconto :: Double -> (Double -> Double)
 criarDesconto p = \preco -> preco * (1 - p / 100)
+
+-- ==== cupomMinimo (extensao) ====
+
+-- Extensao: cupom que so vale para compras ACIMA de um valor minimo.
+-- Tambem devolve uma funcao, entao entra em aplicarTodas e melhorOpcao
+-- como qualquer outra promocao.
+-- Preco exatamente igual ao limite nao ganha desconto ("maior que").
+cupomMinimo :: Double -> Double -> (Double -> Double)
+cupomMinimo limite percentual = \preco ->
+  if preco > limite
+    then criarDesconto percentual preco
+    else preco
