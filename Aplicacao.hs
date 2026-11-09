@@ -20,3 +20,13 @@ aplicarNVezes :: Int -> (a -> a) -> a -> a
 aplicarNVezes n f x
   | n <= 0    = x
   | otherwise = aplicarNVezes (n - 1) f (f x)
+
+-- ==== criarDesconto ====
+
+-- Devolve uma funcao: o percentual fica guardado dentro da lambda.
+-- criarDesconto 10 100 funciona porque (criarDesconto 10) devolve uma funcao,
+-- e essa funcao e aplicada a 100.
+-- Nao validamos o percentual: negativo vira acrescimo e acima de 100 gera
+-- preco negativo. Discutimos essa limitacao na analise critica.
+criarDesconto :: Double -> (Double -> Double)
+criarDesconto p = \preco -> preco * (1 - p / 100)
