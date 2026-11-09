@@ -39,6 +39,16 @@ aplicarTodas :: [a -> a] -> a -> a
 aplicarTodas [] x = x
 aplicarTodas (f:fs) x = aplicarTodas fs (f x)
 
+-- ==== melhorOpcao ====
+
+-- Diferente de aplicarTodas: cada promocao recebe o preco ORIGINAL.
+-- Usamos map e minimum porque o tema so proibe esses recursos nas funcoes
+-- recursivas, e aqui eles deixam a ideia mais direta.
+-- minimum da erro em lista vazia, entao sem promocoes devolvemos o preco cheio.
+melhorOpcao :: [Double -> Double] -> Double -> Double
+melhorOpcao [] preco = preco
+melhorOpcao promocoes preco = minimum (map (\promocao -> promocao preco) promocoes)
+
 -- ==== cupomMinimo (extensao) ====
 
 -- Extensao: cupom que so vale para compras ACIMA de um valor minimo.
