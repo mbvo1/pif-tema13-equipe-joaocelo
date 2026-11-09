@@ -1,7 +1,7 @@
 # Tema 13 – Funções de ordem superior em um motor de promoções
 
 **Disciplina:** Programação Imperativa e Funcional – CESAR School – 2026.2
-**Equipe:** [nome]
+**Equipe:** Joaocelo
 **Integrantes:**
 - Marcelo Bresani Victor de Oliveira
 - João Cláudio Beltrão

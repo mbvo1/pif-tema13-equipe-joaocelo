@@ -1,7 +1,7 @@
 # SÍNTESE DAS DESCOBERTAS
 
 **Tema:** 13 – Funções de ordem superior em um motor de promoções
-**Equipe:** [nome]
+**Equipe:** Joaocelo
 **Integrantes:** Marcelo Bresani Victor de Oliveira, João Cláudio Beltrão
 
 ## 1. O conceito em poucas palavras
