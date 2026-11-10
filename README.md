@@ -25,11 +25,15 @@ Compilar e executar (Windows PowerShell):
 
     ghc -Wall Aplicacao.hs -o aplicacao.exe
     .\aplicacao.exe
+    ghc -Wall Exemplo1.hs -o exemplo1.exe
+    .\exemplo1.exe
 
 Compilar e executar (Linux/macOS):
 
     ghc -Wall Aplicacao.hs -o aplicacao
     ./aplicacao
+    ghc -Wall Exemplo1.hs -o exemplo1
+    ./exemplo1
 
 Testar no GHCi:
 
