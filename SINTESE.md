@@ -94,7 +94,7 @@ O ponteiro para função já permite separar o cálculo das regras, mas cada reg
 | Marcelo Bresani Victor de Oliveira | aplicarDuasVezes, aplicarNVezes, criarDesconto, cupomMinimo (extensão), Exemplo1 | Pergunta 1 do desafio | Introdução, investigação técnica, Exemplo1 |
 | João Cláudio Beltrão | aplicarTodas, melhorOpcao, main, comparacao.c | Perguntas 2 e 3 do desafio | Descoberta da ordem, aplicação, C × Haskell, interação |
 
-**Uso de ferramenta de IA:** a primeira versão do código e dos textos deste repositório foi gerada com o Claude (Anthropic). Cada integrante é responsável por revisar, executar e explicar as partes indicadas no quadro.
+**Uso de ferramenta de IA:** Para o repósitorio, um começo e dúvidas, contamos com a ajuda do Claude (Anthropic).
 
 ## 7. Referências
 
